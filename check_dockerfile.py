@@ -224,11 +224,11 @@ class Dockerfile(object):
                 },
                 sort_keys=True, indent=4)
 
-    @staticmethod
-    def evaluation():
-        if len(self.errors > 0):
+    @property
+    def evaluation(self):
+        if len(self.errors) > 0:
             return -1
-        
+
         return len(self.warnings)
 
 # end of class Dockerfile
