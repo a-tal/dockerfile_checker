@@ -229,7 +229,7 @@ class Dockerfile(object):
         if len(self.errors) > 0:
             return -1
 
-        return len(self.warnings)
+        return 0
 
 # end of class Dockerfile
 
@@ -244,8 +244,7 @@ def main():
     d = Dockerfile(args.dockerfile)
     d.to_json()
 
-    # -1 if errors occurred
-    # number of warnings otherwise
+    # -1 if errors occurred, else 0
     return d.evaluation
 
 if __name__ == '__main__':
